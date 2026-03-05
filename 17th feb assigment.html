@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveen S Nath | Styled Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+    --bg-dark: #0f0c29;
+    --bg-mid: #302b63;
+    --bg-light: #24243e;
+    --accent: #ff4ecd;
+    --accent-2: #00f5ff;
+    --card-bg: rgba(255,255,255,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-mid), var(--bg-light));
+    color: white;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Animated background glow */
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent), transparent 60%);
+    top: -200px;
+    left: -200px;
+    opacity: 0.2;
+    animation: floatGlow 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+    from { transform: translate(0,0); }
+    to { transform: translate(150px,150px); }
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 80px;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,0.4);
+    z-index: 100;
+}
+
+nav h2 {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-2);
+    animation: fadeDown 1s ease;
+}
+
+nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 120px 20px 80px;
+    animation: fadeUp 1.2s ease;
+}
+
+.hero img {
+    width: 200px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid var(--accent-2);
+    box-shadow: 0 0 40px var(--accent-2);
+    margin-bottom: 25px;
+    transition: 0.4s;
+}
+
+.hero img:hover {
+    transform: scale(1.07) rotate(1deg);
+}
+
+.hero h1 {
+    font-size: 48px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+/* SECTION CARDS */
+.section {
+    width: 85%;
+    margin: 70px auto;
+    padding: 60px;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: fadeUp 1.2s ease;
+    transition: 0.4s ease;
+}
+
+.section:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.7);
+}
+
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    color: var(--accent);
+}
+
+.section p {
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.section ul {
+    margin-top: 20px;
+    padding-left: 25px;
+}
+
+.section li {
+    margin-bottom: 12px;
+}
+
+/* SKILLS */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skill-badge {
+    padding: 10px 22px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    font-weight: 600;
+    color: black;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.skill-badge:hover {
+    transform: scale(1.15);
+}
+
+/* BUTTONS */
+.social-links a {
+    display: inline-block;
+    margin: 15px 15px 0 0;
+    padding: 14px 28px;
+    border-radius: 40px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h2>Naveen S Nath</h2>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <img src="passport photo.JPG" alt="Naveen S Nath">
+    <h1>Naveen S Nath</h1>
+    <p>AI & ML Enthusiast | Software Engineering Aspirant | Computer Vision Developer</p>
+</div>
+
+<div class="section" id="about">
+    <h2>Career Objective</h2>
+    <p>
+        Motivated software engineering aspirant passionate about Artificial Intelligence,
+        Machine Learning and computer vision. Driven by curiosity and a detail-oriented mindset
+        to build intelligent systems that solve meaningful real-world problems.
+    </p>
+</div>
+
+<div class="section" id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>B.E – Artificial Intelligence & Machine Learning (CGPA: 8.12, 2026)</li>
+        <li>12th Grade – 90%</li>
+        <li>10th Grade – 81.2%</li>
+    </ul>
+</div>
+
+<div class="section" id="projects">
+    <h2>Projects</h2>
+    <ul>
+        <li>Mentor-Connect – Web-based mentor-student learning platform</li>
+        <li>Clone-GPT – OpenAI API powered chatbot with MongoDB</li>
+        <li>AI Waste Classification – YOLOv8 object detection system</li>
+    </ul>
+</div>
+
+<div class="section" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+        <div class="skill-badge">Python</div>
+        <div class="skill-badge">C</div>
+        <div class="skill-badge">Java</div>
+        <div class="skill-badge">HTML</div>
+        <div class="skill-badge">CSS</div>
+        <div class="skill-badge">JavaScript</div>
+        <div class="skill-badge">PHP</div>
+        <div class="skill-badge">MongoDB</div>
+        <div class="skill-badge">MySQL</div>
+        <div class="skill-badge">Git</div>
+    </div>
+</div>
+
+<div class="section" id="contact">
+    <h2>Connect With Me</h2>
+    <div class="social-links">
+        <a href="https://github.com/Naveen-S-Nath" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/naveen-s-nath" target="_blank">LinkedIn</a>
+        <a href="mailto:naveen.nwin123@gmail.com">Email Me</a>
+    </div>
+</div>
+
+<footer>
+    © 2026 Naveen S Nath | Fully Styled Version
+</footer>
+
+</body>
+</html>
